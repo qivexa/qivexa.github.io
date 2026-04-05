@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>QIVEXA CORE | ROSE GOLD SUITE</title>
+  <title>QIVEXA CORE | GUNMETAL SUITE</title>
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1c0f14">
+  <meta name="theme-color" content="#0f1115">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" href="icon-192.png">
@@ -18,7 +18,7 @@
 
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at 20% 40%, #1a0f12, #0a0508);
+      background: radial-gradient(circle at 30% 10%, #14181c, #07090b);
       font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
       display: flex;
       align-items: center;
@@ -27,12 +27,12 @@
     }
 
     :root {
-      --rose: #e8b4b8;
-      --rose-gold: #d4a5a5;
-      --copper: #b87c7c;
-      --card-bg: #130b0e;
-      --border: #2a1a1f;
-      --text-dim: #b89a9a;
+      --ice: #c8d8e8;
+      --silver: #9aafc4;
+      --gunmetal: #2a2e34;
+      --card-bg: #0c0f12;
+      --border: #1e2228;
+      --text-dim: #8a9aaa;
     }
 
     .core {
@@ -43,10 +43,10 @@
       border: 1px solid var(--border);
       padding: 1.8rem;
       position: relative;
-      box-shadow: 0 40px 120px rgba(0,0,0,0.8), inset 0 0 30px rgba(255,200,210,0.03);
+      box-shadow: 0 40px 120px rgba(0,0,0,0.8), inset 0 0 30px rgba(255,255,255,0.02);
     }
 
-    /* rose gold line atas */
+    /* ice line atas */
     .core::before {
       content: "";
       display: block;
@@ -55,18 +55,18 @@
       margin: 0 auto 1.2rem auto;
       border-radius: 2px;
       background: linear-gradient(90deg,
-        rgba(232,180,184,0),
-        rgba(232,180,184,0.3),
-        rgba(232,180,184,0.8),
-        rgba(255,220,225,1),
-        rgba(232,180,184,0.8),
-        rgba(232,180,184,0.3),
-        rgba(232,180,184,0)
+        rgba(200,216,232,0),
+        rgba(200,216,232,0.3),
+        rgba(200,216,232,0.8),
+        rgba(240,248,255,1),
+        rgba(200,216,232,0.8),
+        rgba(200,216,232,0.3),
+        rgba(200,216,232,0)
       );
-      box-shadow: 0 0 8px rgba(232,180,184,0.5);
+      box-shadow: 0 0 8px rgba(200,216,232,0.4);
     }
 
-    /* bottom glow rose */
+    /* bottom glow ice */
     .core::after {
       content: "";
       position: absolute;
@@ -74,7 +74,7 @@
       left: 0;
       width: 100%;
       height: 40px;
-      background: linear-gradient(180deg, rgba(232,180,184,0), rgba(232,180,184,0.06), rgba(232,180,184,0.12));
+      background: linear-gradient(180deg, rgba(200,216,232,0), rgba(200,216,232,0.05), rgba(200,216,232,0.1));
       border-radius: 0 0 1.8rem 1.8rem;
       pointer-events: none;
     }
@@ -83,23 +83,23 @@
       text-align: center;
       margin-bottom: 1.2rem;
       padding-bottom: 0.6rem;
-      border-bottom: 1px solid #25161b;
+      border-bottom: 1px solid #1a1e22;
     }
 
     h1 {
       font-size: 1.7rem;
       letter-spacing: 6px;
       font-weight: 400;
-      background: linear-gradient(135deg, var(--rose), #ffd0d5);
+      background: linear-gradient(135deg, var(--ice), #ffffff);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px rgba(232,180,184,0.3);
+      text-shadow: 0 0 10px rgba(200,216,232,0.2);
     }
 
     .subline {
       font-size: 0.6rem;
-      color: #8a6a6a;
+      color: #6a7a8a;
       margin-top: 0.2rem;
       letter-spacing: 1px;
     }
@@ -107,14 +107,13 @@
     .status {
       margin-top: 0.5rem;
       font-size: 0.6rem;
-      color: #9a7a7a;
+      color: #7a8a9a;
     }
 
     .status span {
-      color: #ffb8c0;
+      color: #aad0ff;
     }
 
-    /* grid 2 kolom */
     .apps-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -123,7 +122,7 @@
     }
 
     .app-card {
-      background: #0d070a;
+      background: #07090b;
       border: 1px solid var(--border);
       border-radius: 1.2rem;
       padding: 1rem 0.5rem;
@@ -138,17 +137,17 @@
     }
 
     .app-card:hover {
-      border-color: var(--rose);
-      background: #1c1115;
+      border-color: var(--ice);
+      background: #101418;
       transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px rgba(232,180,184,0.15);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px rgba(200,216,232,0.1);
     }
 
     .app-name {
       font-size: 1rem;
       font-weight: 600;
       letter-spacing: 1px;
-      background: linear-gradient(135deg, var(--rose), #ffc0c8);
+      background: linear-gradient(135deg, var(--ice), #e0ecf8);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -161,7 +160,7 @@
 
     .launch {
       font-size: 0.7rem;
-      color: var(--rose);
+      color: var(--ice);
       opacity: 0.7;
     }
 
@@ -169,8 +168,8 @@
       margin-top: 1rem;
       font-size: 0.55rem;
       text-align: center;
-      color: #6a4a4a;
-      border-top: 1px solid #25161b;
+      color: #5a6a7a;
+      border-top: 1px solid #1a1e22;
       padding-top: 0.8rem;
     }
 
@@ -186,7 +185,7 @@
 <div class="core">
   <div class="header">
     <h1>QIVEXA CORE</h1>
-    <div class="subline">Rose Gold Control Interface</div>
+    <div class="subline">Gunmetal Control Interface</div>
     <div class="status">
       SYSTEM <span>ACTIVE</span> | UTC <span id="utc"></span>
     </div>
