@@ -1,8 +1,15 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CHYPRIX ENCRYPTION</title>
+<title>QIVEXA ENCRYPTION</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+
 <style>
 :root{--neon:#00e5ff;--bg:#020202;--card:#0a0a0a;--gold:#ffcc00;--alert:#ff3b3b;--ok:#00ff88}
 *{box-sizing:border-box}
@@ -27,7 +34,7 @@ input[type=file]{display:none}
 <body>
 <div class="box">
 <div class="topline"></div>
-<h2>CHYPRIX ENCRYPTION</h2>
+<h2>QIVEXA ENCRYPTION</h2>
 <div class="clock" id="clock"></div><div class="dropzone" id="drop">DROP FILE HERE OR TAP</div>
 <div class="filename" id="fname"></div>
 <input type="file" id="file"><div class="input-box" id="box1">
@@ -79,7 +86,7 @@ setInterval(updateClock,1000);updateClock();
 function wipe(){fileInput.value="";fname.innerText="";fname.classList.remove('show');drop.classList.remove('active');box1.classList.remove('active');box2.classList.remove('active');pass.value="";pass2.value="";status.innerText="IDLE";percent.innerText=""}
 
 
-// === ENGINE RESTORED (UNCHANGED LOGIC) ===
+// === QIVEXA ENGINE (.qvx) ===
 const CHUNK_SIZE = 10 * 1024 * 1024;
 
 async function deriveKey(password, salt) {
@@ -117,7 +124,7 @@ async function run(mode) {
   salt = crypto.getRandomValues(new Uint8Array(16));
   key = await deriveKey(pass, salt);
 
-  outputChunks.push(new TextEncoder().encode("CPX1"));
+  outputChunks.push(new TextEncoder().encode("QVX1"));
   outputChunks.push(salt);
 
   const meta = JSON.stringify({ name: file.name });
@@ -145,7 +152,7 @@ async function run(mode) {
 
  } else {
   const header = new TextDecoder().decode(await file.slice(0,4).arrayBuffer());
-  if(header !== "CPX1") throw "INVALID";
+  if(header !== "QVX1") throw "INVALID QIVEXA SIGNATURE";
 
   salt = new Uint8Array(await file.slice(4,20).arrayBuffer());
   key = await deriveKey(pass, salt);
@@ -176,7 +183,7 @@ async function run(mode) {
    percent.innerText = pct + "%";
   }
 
-  var original = metaName || file.name.replace(/\.cpx$/,'');
+  var original = metaName || file.name.replace(/\.qvx$/,'');
  }
 
  const blob = new Blob(outputChunks, {type:"application/octet-stream"});
@@ -185,9 +192,9 @@ async function run(mode) {
 
  if(mode==='enc'){
   let base = file.name.replace(/\.[^/.]+$/,'');
-  a.download = base + ".cpx";
+  a.download = base + ".qvx";
  } else {
-  a.download = "chyprix." + original;
+  a.download = "qivexa." + original;
  }
 
  a.click();
@@ -200,5 +207,14 @@ async function run(mode) {
  }
 }
 
-</script></body>
+</script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log('QIVEXA Engine Online'))
+      .catch(err => console.error('Uplink Failed:', err));
+  }
+</script>
+</body>
 </html>
